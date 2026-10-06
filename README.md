@@ -162,6 +162,53 @@ Security Group Change
 
 This confirmed that the detection and alerting workflow operated automatically without manually invoking the Lambda function.
 
+## Test Evidence
+
+The following screenshots document the detection pipeline and successful end-to-end alert delivery.
+
+### 1. High-Severity Lambda Detection
+
+A simulated CloudTrail event representing SSH (port 22) exposed to `0.0.0.0/0` was processed by the Lambda function. The function successfully classified the event as **HIGH severity** and published the alert to Amazon SNS.
+
+![Lambda High Severity Test](lambda-high-severity-test.png)
+
+### 2. EventBridge Detection Rule
+
+The EventBridge rule monitors CloudTrail for EC2 Security Group ingress and egress modifications. The rule is enabled and configured to detect four Security Group API actions.
+
+![EventBridge Detection Rule](eventbridge-detection-rule.png)
+
+### 3. EventBridge to Lambda Integration
+
+Matched security events are forwarded from EventBridge to the `process-security-group-alert` Lambda function for analysis.
+
+![EventBridge Lambda Target](eventbridge-lambda-target.png)
+
+### 4. Security Alert Delivery
+
+After Lambda analyzes the event, Amazon SNS delivers the formatted alert by email. The test below demonstrates a **HIGH-severity** alert generated after detecting simulated public SSH exposure.
+
+![High Severity Email Alert](high-severity-email-alert.png)
+
+### Validation Result
+
+The successful tests verified the complete event-driven workflow:
+
+```text
+Security Group Change
+        ↓
+AWS CloudTrail
+        ↓
+Amazon EventBridge
+        ↓
+AWS Lambda
+        ↓
+Severity Analysis
+        ↓
+Amazon SNS
+        ↓
+Email Alert
+
 ## Troubleshooting & Validation
 
 During development, Amazon CloudWatch logs and AWS service metrics were used to troubleshoot and validate the event pipeline.
