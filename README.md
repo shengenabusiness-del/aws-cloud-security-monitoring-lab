@@ -10,7 +10,7 @@ When a monitored Security Group change occurs, the system captures the activity,
 
 ## Architecture
 
-![AWS Cloud Security Monitoring Architecture](architecture.png)
+![AWS Cloud Security Monitoring Architecture](AWS%20Cloud%20Security%20Monitoring%20Architecture.png)
 
 ```text
 EC2 Security Group Change
