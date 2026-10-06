@@ -226,6 +226,22 @@ Testing included:
 
 Testing each component independently made it possible to isolate failures before validating the complete pipeline.
 
+## Incident Response
+
+Detection is only the first step of the security monitoring process. This project also includes an incident response runbook that documents how an analyst should investigate and respond to Security Group alerts.
+
+The runbook covers:
+
+- Alert triage
+- Security Group investigation
+- CloudTrail identity validation
+- Risk assessment
+- Authorized vs. unauthorized changes
+- Remediation procedures
+- Escalation considerations
+
+📘 **[View the Security Group Incident Response Runbook](docs/incident-response.md)**
+
 ## Security Concepts Demonstrated
 
 This project demonstrates practical experience with:
