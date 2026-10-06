@@ -208,7 +208,8 @@ Severity Analysis
 Amazon SNS
         ↓
 Email Alert
-
+```
+**Result: End-to-end security detection and alerting successfully validated.**
 ## Troubleshooting & Validation
 
 During development, Amazon CloudWatch logs and AWS service metrics were used to troubleshoot and validate the event pipeline.
