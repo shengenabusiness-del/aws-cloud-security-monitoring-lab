@@ -364,11 +364,23 @@ Amazon SNS delivers formatted security alerts through email.
 
 ![High Severity Email Alert](high-severity-email-alert.png)
 
-### Additional AI Integration Evidence
+### 5. AI-Powered Security Analysis
 
-The project was also validated using Amazon Bedrock and Claude Haiku 4.5.
+A real EC2 Security Group rule modification triggered the
+automated monitoring pipeline.
 
-Additional screenshots of the Bedrock integration and AI-generated email analysis can be included to document the enhanced workflow.
+AWS Lambda processed the CloudTrail event and invoked
+Anthropic Claude Haiku 4.5 through Amazon Bedrock.
+
+The AI generated a contextual security assessment covering:
+
+- Security risks associated with the configuration change
+- Potential operational and security impacts
+- Recommended investigation and remediation steps
+
+The analysis was successfully delivered through Amazon SNS.
+
+![AI-Powered Security Analysis](LABss5.png)
 
 ## Troubleshooting & Validation
 
