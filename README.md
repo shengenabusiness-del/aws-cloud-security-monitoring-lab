@@ -20,7 +20,7 @@ The system operates automatically without requiring manual intervention.
 
 ## Architecture
 
-![AWS Cloud Security Monitoring Architecture](AWS%20Cloud%20Security%20Monitoring%20Architecture.png)
+![AWS Cloud Security Monitoring Architecture](AWS%20Cloud%20Security%20Monitoring%20Architecture%20%282%29.png)
 
 **AI-Enhanced Architecture:**
 
